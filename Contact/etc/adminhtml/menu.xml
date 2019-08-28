@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Teleb Contact menu
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Teleb_Contact::question"
+             title="Contact Questions"
+             module="Teleb_Contact"
+             parent="Magento_Customer::customer"
+             sortOrder="30"
+             action="teleb_contact/question/index"
+             resource="Teleb_Contact::contact_question" />
+    </menu>
+</config>

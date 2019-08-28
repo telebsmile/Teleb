@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Teleb Contact question index layout
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="teleb_contact_question_listing"/>
+        </referenceContainer>
+    </body>
+</page>

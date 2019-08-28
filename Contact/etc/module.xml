@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Teleb Contact module
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
+    <module name="Teleb_Contact" setup_version="0.0.1">
+        <sequence>
+            <module name="Magento_Contact" />
+        </sequence>
+    </module>
+</config>

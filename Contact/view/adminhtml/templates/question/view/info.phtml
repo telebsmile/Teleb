@@ -1,0 +1,60 @@
+<?php
+/**
+ * Teleb Contact question view info template
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+/** @var \Magento\Backend\Block\Template $block */
+/** @var \Teleb\Contact\ViewModel\Question\Item\InfoViewModel $questionViewModel */
+$questionViewModel = $block->getQuestionInfoViewModel();
+/** @var \Teleb\Contact\Model\Question $question */
+$question = $questionViewModel->getQuestion();
+?>
+<div class="row">
+    <div class="fieldset-wrapper comment-information col-l-6 col-l-offset-3">
+        <div class="fieldset-wrapper-title">
+            <span class="title"><?= $block->escapeHtml(__('Question Information')) ?></span>
+        </div>
+        <table class="admin__table-secondary">
+            <tbody>
+                <tr>
+                    <th><?= $block->escapeHtml(__('Question ID:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getId()) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('User name:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getName()) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('User E-mail:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getEmail()) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('User Telephone:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getTelephone()) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('Question Date:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getCreatedAt()) ?></td>
+                </tr>
+                <tr>
+                    <th><?= $block->escapeHtml(__('Updating Date:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getUpdateAt()) ?></td>
+                </tr>
+                <?php if ($question->hasTheme()): ?>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Question Theme:')) ?></th>
+                        <td><?= $block->escapeHtml($question->getTheme()) ?></td>
+                    </tr>
+                <?php endif; ?>
+                <tr>
+                    <th><?= $block->escapeHtml(__('Question Text:')) ?></th>
+                    <td><?= $block->escapeHtml($question->getComment()) ?></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

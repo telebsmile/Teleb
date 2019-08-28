@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Teleb Contact question form
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">teleb_contact_question_form.teleb_contact_question_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Question Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="save" class="Teleb\Contact\Block\Adminhtml\Question\Edit\UpdateButton"/>
+            <button name="send_email" class="Teleb\Contact\Block\Adminhtml\Question\Edit\SendButton"/>
+            <button name="back" class="Teleb\Contact\Block\Adminhtml\Question\Edit\BackButton"/>
+            <button name="delete" class="Teleb\Contact\Block\Adminhtml\Question\Edit\DeleteButton"/>
+        </buttons>
+        <namespace>teleb_contact_question_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>teleb_contact_question_form.teleb_contact_question_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="teleb_contact_question_form_form_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <settings>
+            <submitUrl path="teleb_contact/question/update"/>
+        </settings>
+        <dataProvider class="Teleb\Contact\Model\Question\DataProvider" name="teleb_contact_question_form_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <htmlContent name="question_info">
+        <block class="Magento\Backend\Block\Template" name="question_info" template="Teleb_Contact::question/view/info.phtml">
+            <arguments>
+                <argument name="question_info_view_model" xsi:type="object">Teleb\Contact\ViewModel\Question\Item\InfoViewModel</argument>
+            </arguments>
+        </block>
+    </htmlContent>
+    <fieldset name="general">
+        <settings>
+            <label/>
+        </settings>
+        <field name="is_answered">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">question</item>
+                    <item name="sortOrder" xsi:type="string">10</item>
+                    <item name="default" xsi:type="number">0</item>
+                    <item name="dataType" xsi:type="string">boolean</item>
+                    <item name="label" xsi:type="string" translate="true">Is answered</item>
+                    <item name="dataScope" xsi:type="string">is_answered</item>
+                    <item name="formElement" xsi:type="string">checkbox</item>
+                    <item name="prefer" xsi:type="string">toggle</item>
+                    <item name="valueMap" xsi:type="array">
+                        <item name="false" xsi:type="string">0</item>
+                        <item name="true" xsi:type="string">1</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="answer">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">question</item>
+                    <item name="sortOrder" xsi:type="string">20</item>
+                    <item name="formElement" xsi:type="string">textarea</item>
+                    <item name="dataType" xsi:type="string">textarea</item>
+                    <item name="label" xsi:type="string" translate="true">Question Answer</item>
+                    <item name="dataScope" xsi:type="string">answer</item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+</form>

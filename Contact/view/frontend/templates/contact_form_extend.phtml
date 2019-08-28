@@ -1,0 +1,22 @@
+<?php
+/**
+ *  Teleb Contact contact_form_extend template
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+
+/** @var Magento\Framework\View\Element\Template $block */
+/** @var Magento\Contact\Helper\Data $helper */
+$helper = $this->helper('Magento\Contact\Helper\Data');
+?>
+<div class="field question-theme">
+    <label class="label" for="theme"><span><?= $block->escapeHtml(__('Question Theme')) ?></span></label>
+    <div class="control">
+        <input name="theme" id="theme" title="<?= $block->escapeHtmlAttr(__('Question Theme')) ?>"
+               value="<?= $block->escapeHtmlAttr($helper->getPostValue('theme')) ?>"
+               class="input-text" type="text" />
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Acl configuration
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Teleb_Contact::contact_question" title="Contact Questions" translate="title" sortOrder="10">
+                    <resource id="Teleb_Contact::contact_question_save" title="Contact Question Save" translate="title" sortOrder="10" />
+                    <resource id="Teleb_Contact::contact_question_answer" title="Contact Question Answer" translate="title" sortOrder="20" />
+                    <resource id="Teleb_Contact::contact_question_delete" title="Contact Question Delete" translate="title" sortOrder="30" />
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

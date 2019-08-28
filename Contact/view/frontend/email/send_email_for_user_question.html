@@ -1,0 +1,24 @@
+<!--
+/**
+ * Teleb Contact Send
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<!--@subject {{trans "Thank you for your question %userName" userName=$data.userName}} @-->
+<!--@vars {
+"var $answer":"Answer"
+"var $theme":"User comment theme"
+"var $comment":"User Comment"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<p><b>{{trans "You asked about:"}}</b> {{var theme}}</p>
+<p><b>{{trans "Text of your comment:"}}</b> {{var comment|row}}</p>
+<p><b>{{trans "Answer:"}}</b> {{var answer}}</p>
+
+{{template config_path="design/email/footer_template"}}

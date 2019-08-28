@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Teleb Contact email templates
+ *
+ * @category  Teleb
+ * @package   Teleb\Contact
+ * @author    Tetiana Lebed <teleb@smile.fr>
+ * @copyright 2019 Smile
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="contact_user_question_answer_email_template" label="Send Answer for User question" file="send_email_for_user_question.html" type="html" module="Teleb_Contact" area="frontend"/>
+</config>
