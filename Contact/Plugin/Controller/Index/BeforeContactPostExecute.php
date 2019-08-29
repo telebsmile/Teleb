@@ -17,6 +17,11 @@ use Teleb\Contact\Model\QuestionFactory;
 use Teleb\Contact\Model\QuestionRepository;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Class BeforeContactPostExecute
+ *
+ * @package Teleb\Contact\Plugin\Controller\Index
+ */
 class BeforeContactPostExecute
 {
     /**

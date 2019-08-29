@@ -54,13 +54,13 @@ class Update extends Action
     /**
      * Update constructor
      *
-     * @param Action\Context                                        $context
-     * @param DataPersistorInterface $dataPersistor
-     * @param QuestionRepositoryInterface                           $questionRepository
-     * @param QuestionFactory                  $questionFactory
+     * @param Action\Context              $context
+     * @param DataPersistorInterface      $dataPersistor
+     * @param QuestionRepositoryInterface $questionRepository
+     * @param QuestionFactory             $questionFactory
      */
     public function __construct(
-        Action\Context              $context,
+        Action\Context $context,
         DataPersistorInterface $dataPersistor,
         QuestionRepositoryInterface $questionRepository,
         QuestionFactory $questionFactory
